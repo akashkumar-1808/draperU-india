@@ -215,7 +215,7 @@ ul {
     padding: 0 24px;
     width: 100%;
     display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
+    grid-template-columns: 0.9fr 1.1fr;
     gap: 60px;
     align-items: center;
 }
@@ -234,7 +234,7 @@ ul {
 
 .hero-visual-container {
     width: 100%;
-    max-width: 650px;
+    max-width: 800px;
     position: relative;
     padding: 8px;
     border: 1px solid rgba(0, 102, 255, 0.2);
@@ -268,7 +268,7 @@ ul {
 }
 
 .hero-title {
-    font-size: clamp(3.5rem, 8vw, 5.5rem);
+    font-size: clamp(2.5rem, 6vw, 4rem);
     line-height: 1.05;
     font-weight: 700;
     margin-bottom: 24px;
@@ -283,7 +283,7 @@ ul {
 .dynamic-text-wrapper {
     display: inline-block;
     position: relative;
-    height: clamp(4rem, 9vw, 6.5rem);
+    height: clamp(3rem, 7vw, 5rem);
     vertical-align: top;
     width: 100%;
 }
@@ -313,7 +313,7 @@ ul {
 .hero-description {
     font-size: clamp(1.125rem, 2vw, 1.25rem);
     color: var(--text-secondary);
-    margin-bottom: 48px;
+    margin-bottom: 120px;
     max-width: 600px;
     line-height: 1.7;
 }
@@ -501,8 +501,10 @@ ul {
 
 .legacy-gallery {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 32px;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 .gallery-card {
@@ -563,42 +565,41 @@ ul {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 20px;
-    height: 480px;
 }
 
 .category-card {
     position: relative;
     border-radius: 20px;
-    overflow: hidden;
-    background-size: cover;
-    background-position: center;
+    background: #FFFFFF;
+    border: 1px solid var(--border-light);
     display: flex;
-    align-items: flex-end;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
     padding: 32px 24px;
-    transition: transform 0.4s ease;
+    min-height: 240px;
+    transition: transform var(--transition-medium), box-shadow var(--transition-medium);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
 }
 
 .category-card:hover {
     transform: translateY(-8px);
-}
-
-.category-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0) 100%);
-    z-index: 1;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05);
+    border-color: rgba(0, 136, 255, 0.2);
 }
 
 .category-title {
-    position: relative;
-    z-index: 2;
-    color: #FFFFFF;
+    color: var(--text-primary);
     font-size: 1.5rem;
     font-weight: 700;
     letter-spacing: -0.02em;
+    margin-bottom: 12px;
+}
+
+.category-desc {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.5;
 }
 
 /* =========================================
